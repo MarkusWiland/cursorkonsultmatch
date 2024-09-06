@@ -5,7 +5,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'source.unsplash.com',
-     
+        pathname: '/**', // Tillåter alla vägar från Unsplash
       },
     ],
   },

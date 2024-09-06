@@ -1,31 +1,32 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
+import avatar from "@/app/assets/avatar.png";
 const testimonials = [
   {
     name: "John Doe",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien. Sed ut purus eget sapien.",
     title: "CEO",
-    image: "https://source.unsplash.com/random/200x200/?portrait",
+    image: avatar,
   },
   {
     name: "Anna Svensson",
     text: "Fantastisk service och produkt! Jag kan verkligen rekommendera detta företag till alla som söker kvalitet och pålitlighet.",
     title: "Marknadschef",
-    image: "https://source.unsplash.com/random/200x200/?woman",
+    image: avatar,
   },
   {
     name: "Erik Lindberg",
     text: "Som utvecklare uppskattar jag verkligen de innovativa lösningarna som erbjuds. Det har revolutionerat vårt arbetssätt.",
     title: "Senior Utvecklare",
-    image: "https://source.unsplash.com/random/200x200/?man",
+    image: avatar,
   },
   {
     name: "Maria Öberg",
     text: "Kundtjänsten är enastående. De går alltid den extra milen för att säkerställa kundnöjdhet. Mycket imponerande!",
     title: "Kundrelationschef",
-    image: "https://source.unsplash.com/random/200x200/?businesswoman",
+   image: avatar,
   },
 ];
 
@@ -52,8 +53,8 @@ export default function Testimonials() {
   useEffect(() => {
     startAnimation();
     return () => stopAnimation();
-  }, []);
-  return (
+  }, [controls, startAnimation, stopAnimation]); // Lägg till beroenden
+    return (
     <section className="py-20 md:py-24">
       <div className="container">
         <h2 className="text-5xl md:text-6xl text-center tracking-tighter font-medium ">
