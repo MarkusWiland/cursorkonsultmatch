@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import avatar from "@/app/assets/avatar.png";
 const testimonials = [
@@ -34,7 +34,7 @@ export default function Testimonials() {
   const controls = useAnimation();
   const x = useMotionValue(0);
 
-  const startAnimation = () => {
+  const startAnimation = useCallback(() => {
     controls.start({
       x: "-50%",
       transition: {
@@ -44,16 +44,16 @@ export default function Testimonials() {
         repeatType: "loop",
       },
     });
-  };
+  }, [controls]);
 
-  const stopAnimation = () => {
+  const stopAnimation = useCallback(() => {
     controls.stop();
-  };
+  }, [controls]);
 
   useEffect(() => {
     startAnimation();
     return () => stopAnimation();
-  }, [controls, startAnimation, stopAnimation]); // Lägg till beroenden
+  }, [startAnimation, stopAnimation]);
     return (
     <section className="py-20 md:py-24">
       <div className="container">
