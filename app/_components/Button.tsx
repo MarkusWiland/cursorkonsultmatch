@@ -27,7 +27,6 @@ export function Button({
   as?: any;
   containerClassName?: string;
   borderClassName?: string;
- 
     duration?: number;
   className?: string;
   [key: string]: any;
@@ -75,7 +74,7 @@ export function Button({
 
 export const MovingBorder = ({
   children,
-  duration = 2000,
+  duration = 4000,
   rx,
   ry,
   ...otherProps
@@ -132,6 +131,7 @@ export const MovingBorder = ({
           position: "absolute",
           top: 0,
           left: 0,
+  
           display: "inline-block",
           transform,
         }}

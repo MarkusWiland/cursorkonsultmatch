@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
 const testimonials = [
   {
     name: "John Doe",
@@ -30,27 +30,46 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const controls = useAnimation();
+  const x = useMotionValue(0);
+
+  const startAnimation = () => {
+    controls.start({
+      x: "-50%",
+      transition: {
+        duration: 50,
+        repeat: Infinity,
+        ease: "linear",
+        repeatType: "loop",
+      },
+    });
+  };
+
+  const stopAnimation = () => {
+    controls.stop();
+  };
+
+  useEffect(() => {
+    startAnimation();
+    return () => stopAnimation();
+  }, []);
   return (
     <section className="py-20 md:py-24">
       <div className="container">
-        
         <h2 className="text-5xl md:text-6xl text-center tracking-tighter font-medium ">
-          Beyond expasdasd
+          Upptäck de senaste konsultuppdragen
         </h2>
-        <p className="text-lg md:text-xl text-center mt-5 tracking-tight text-foreground/70 max-w-sm mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus
-          eget sapien. Sed ut purus eget sapien.
+        <p className="text-lg md:text-xl text-center mt-5 tracking-tight text-foreground/70 max-w-sm md:max-w-xl mx-auto">
+          Håll dig uppdaterad med de senaste möjligheterna! Här hittar du de
+          senaste 10 uppdragen från företag som söker efter rätt kompetens.
+          Säkra ditt nästa uppdrag idag.
         </p>
         <div className="flex overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
           <motion.div
-            initial={{ translateX: "-50%" }}
-            animate={{ translateX: "0%" }}
-            transition={{
-              repeat: Infinity,
-              ease: "linear",
-             
-              duration: 30,
-            }}
+            style={{ x }}
+            animate={controls}
+            onHoverStart={stopAnimation}
+            onHoverEnd={startAnimation}
             className="flex gap-5 flex-none pr-5"
           >
             {[...testimonials, ...testimonials].map((testimonial, index) => (
@@ -58,7 +77,7 @@ export default function Testimonials() {
                 key={index}
                 className="border md:p-10 border-white/15 p-6 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)] max-w-sm  md:max-w-md flex-none"
               >
-                <div className="text-lg tracking-tight md:text-2xl">
+                <div className="text-lg tracking-tight md:text-1xl">
                   {testimonial.text}
                 </div>
                 <div className="flex items-center gap-3 mt-5">

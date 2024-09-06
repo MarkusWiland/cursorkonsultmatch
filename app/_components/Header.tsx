@@ -14,10 +14,10 @@ export default function Header() {
         <div className="hidden md:block">
           <nav className="flex gap-8 text-sm">
             <Link href="/" className="text-white/70 hover:text-white transition">Hem</Link>
-            <Link href="/" className="text-white/70 hover:text-white transition">Hem</Link>
-            <Link href="/" className="text-white/70 hover:text-white transition">Hem</Link>
-            <Link href="/" className="text-white/70 hover:text-white transition">Hem</Link>
-            <Link href="/" className="text-white/70 hover:text-white transition">Hem</Link>
+            <Link href="/" className="text-white/70 hover:text-white transition">Konsulter</Link>
+            <Link href="/" className="text-white/70 hover:text-white transition">Uppdrag</Link>
+            <Link href="/" className="text-white/70 hover:text-white transition">Om</Link>
+            <Link href="/" className="text-white/70 hover:text-white transition">Kontakt</Link>
           </nav>
         </div>
         <div className="flex gap-4 text-sm">
