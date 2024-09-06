@@ -17,19 +17,18 @@ export function Button({
   as: Component = "button",
   containerClassName,
   borderClassName,
-
   duration,
   className,
   ...otherProps
 }: {
   borderRadius?: string;
   children: React.ReactNode;
-  as?: any;
+  as?: keyof JSX.IntrinsicElements;
   containerClassName?: string;
   borderClassName?: string;
-    duration?: number;
+  duration?: number;
   className?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) {
   return (
     <Component
@@ -83,9 +82,9 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
-  const pathRef = useRef<any>();
+  const pathRef = useRef<SVGRectElement | null>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {
