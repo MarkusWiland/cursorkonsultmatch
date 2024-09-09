@@ -7,16 +7,16 @@ export default function Header() {
       <div className="container">
         <div className="flex items-center justify-between border border-white/15 p-2.5 rounded-xl max-w-2xl mx-auto backdrop-blur-md">
           <div>
-            <div>
-              <span>Konsultmatch</span>
+            <div className="border border-white/35 p-1.5 rounded-md">
+              <span>KM</span>
             </div>
           </div>
         <div className="hidden md:block">
           <nav className="flex gap-8 text-sm">
             <Link href="/" className="text-white/70 hover:text-white transition">Hem</Link>
-            <Link href="/" className="text-white/70 hover:text-white transition">Konsulter</Link>
-            <Link href="/" className="text-white/70 hover:text-white transition">Uppdrag</Link>
-            <Link href="/" className="text-white/70 hover:text-white transition">Om</Link>
+            <Link href="/konsulter" className="text-white/70 hover:text-white transition">Konsulter</Link>
+            <Link href="/uppdrag" className="text-white/70 hover:text-white transition">Uppdrag</Link>
+            <Link href="/om" className="text-white/70 hover:text-white transition">Om</Link>
             <Link href="/" className="text-white/70 hover:text-white transition">Kontakt</Link>
           </nav>
         </div>
