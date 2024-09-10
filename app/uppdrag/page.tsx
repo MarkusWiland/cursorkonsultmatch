@@ -19,8 +19,10 @@ export default function Uppdrag() {
       </section>
       <section className="py-16">
         <div className="container">
-          <h1>Uppdrag</h1>
-         <LayoutGridDemo />
+          <h1 className="text-4xl font-semibold text-center">
+            Uppdrag
+          </h1>
+          <LayoutGridDemo />
         </div>
       </section>
     </>

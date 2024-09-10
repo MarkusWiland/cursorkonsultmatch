@@ -45,9 +45,13 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
             )}
             layoutId={`card-${card.id}`}
             transition={{
-              duration: 0.25,
-              ease: "easeIn",
+              duration: 0.2,
+              ease: "easeInOut",
             }}
+         
+        
+       
+         
           >
             {selected?.id === card.id ? (
               <SelectedCard selected={selected} />
@@ -66,7 +70,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
           selected?.id ? "pointer-events-auto" : "pointer-events-none"
         )}
         animate={{ opacity: selected?.id ? 0.3 : 0 }}
-    
+     
       />
     </div>
   );
@@ -83,7 +87,7 @@ const ImageComponent = ({
     <motion.div
       layoutId={`image-${card.id}-image`}
       className={cn(
-        "absolute inset-0 h-full w-full p-2.5 border border-white/10 rounded-xl transition duration-200"
+        "absolute inset-0 h-full w-full p-2.5 border border-white/10 rounded-xl  cursor-pointer "
       )}
     >
       {/* Conditionally render title and description only when card is not selected */}

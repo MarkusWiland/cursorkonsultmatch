@@ -33,13 +33,13 @@ export default function AccordionComp() {
     }
   }, []);
   return (
-    <section>
+    <section className="sm:px-4">
       <div className="container">
-        <h2 className="text-2xl font-medium text-center">Konsulter</h2>
+        <h2 className="text-2xl font-medium text-center">FAQ</h2>
         <Accordion
           type="single"
           collapsible
-          className="mx-auto py-10 flex flex-col gap-5"
+          className=" mx-auto py-10 flex flex-col gap-5"
         >
           {accordionData.map((item, index) => (
             <AccordionItem

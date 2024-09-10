@@ -57,10 +57,10 @@ export default function Testimonials() {
     return (
     <section className="py-20 md:py-24">
       <div className="container">
-        <h2 className="text-5xl md:text-6xl text-center tracking-tighter font-medium ">
+        <h2 className="text-3xl md:text-6xl text-center tracking-tighter font-medium ">
           Upptäck de senaste konsultuppdragen
         </h2>
-        <p className="text-lg md:text-xl text-center mt-5 tracking-tight text-foreground/70 max-w-sm md:max-w-xl mx-auto">
+        <p className="text-sm md:text-xl text-center mt-5 tracking-tight text-foreground/70 max-w-xs md:max-w-xl mx-auto">
           Håll dig uppdaterad med de senaste möjligheterna! Här hittar du de
           senaste 10 uppdragen från företag som söker efter rätt kompetens.
           Säkra ditt nästa uppdrag idag.
