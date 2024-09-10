@@ -9,6 +9,7 @@ import {
 import {
   ColumnDef,
   ColumnFiltersState,
+  Row,
   SortingState,
   VisibilityState,
   flexRender,
@@ -72,7 +73,7 @@ const data: Consultant[] = [
     yearsOfExperience: 3,
   },
 ];
-const filterRoles = (row: any, columnId: string, filterValue: string) => {
+const filterRoles = (row: Row<Consultant>, columnId: string, filterValue: string) => {
   const roles = row.getValue(columnId) as string[];
   return roles.some((role) =>
     role.toLowerCase().includes(filterValue.toLowerCase())

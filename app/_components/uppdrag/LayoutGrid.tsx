@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { LayoutGrid } from "./ui/layout-grid";
 
 
@@ -76,6 +76,7 @@ const cards = [
     content: <SkeletonOne />,
     className: "md:col-span-1",
     title: "House in the woods",
+    thumbnail: "",
     description: "A serene and tranquil retreat, this house in the woods offers a peaceful escape from the hustle and bustle of city life.",
     
   },
@@ -84,6 +85,7 @@ const cards = [
     content: <SkeletonTwo />,
     className: "col-span-1",
     title: "House in the woods",
+    thumbnail: "",
     description: "A serene and tranquil retreat, this house in the woods offers a peaceful escape from the hustle and bustle of city life.",
   },
   {
@@ -91,12 +93,14 @@ const cards = [
     content: <SkeletonThree />,
     className: "col-span-1",
     title: "House in the woods",
+    thumbnail: "",
     description: "A serene and tranquil retreat, this house in the woods offers a peaceful escape from the hustle and bustle of city life.",
   },
   {
     id: 4,
     content: <SkeletonFour />,
     className: "md:col-span-1",
+    thumbnail: "",
     title: "House in the woods",
     description: "A serene and tranquil retreat, this house in the woods offers a peaceful escape from the hustle and bustle of city life.",
   },

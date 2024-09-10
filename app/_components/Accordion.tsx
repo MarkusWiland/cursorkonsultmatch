@@ -18,7 +18,7 @@ const accordionData = [
   },
 ];
 export default function AccordionComp() {
-  const accordionRef = useRef<HTMLDivElement>(null);
+{/*   const accordionRef = useRef<HTMLDivElement>(null);
   const accordionX = useMotionValue(0);
   const accordionY = useMotionValue(0);
   const maskImage = useMotionTemplate`radial-gradient(100px 100px at ${accordionX}px ${accordionY}px, black, transparent)`;
@@ -31,7 +31,7 @@ export default function AccordionComp() {
       accordionX.set(x);
       accordionY.set(y);
     }
-  }, []);
+  }, [accordionX, accordionY]) */}
   return (
     <section className="sm:px-4">
       <div className="container">
@@ -44,7 +44,7 @@ export default function AccordionComp() {
           {accordionData.map((item, index) => (
             <AccordionItem
               key={index}
-              ref={accordionRef}
+              //ref={accordionRef}
               value={`item-${index}`}
               className="border border-white/15 p-2.5 rounded-xl"
             >
