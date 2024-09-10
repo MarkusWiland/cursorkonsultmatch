@@ -17,7 +17,7 @@ export default withSentryConfig(withSentryConfig(nextConfig, {
 // https://github.com/getsentry/sentry-webpack-plugin#options
 
 org: "konsultmatch",
-project: "javascript-nextjs",
+project: "konsultmatch",
 sentryUrl: "https://sentry.io/",
 
 // Only print logs for uploading source maps in CI
