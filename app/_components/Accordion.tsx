@@ -1,12 +1,11 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 const accordionData = [
   {
     title: "Konsulter",
