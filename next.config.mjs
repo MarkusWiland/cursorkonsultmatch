@@ -1,4 +1,4 @@
-import {withSentryConfig} from '@sentry/nextjs';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -6,7 +6,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'source.unsplash.com',
-        pathname: '/**', // Tillåter alla vägar från Unsplash
+        pathname: '/**', 
       },
     ],
   },
