@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 const FAQData = [
   {
