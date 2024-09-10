@@ -3,30 +3,35 @@ import Image from "next/image";
 import React, { useCallback, useEffect } from "react";
 import { motion, useAnimation, useMotionValue } from "framer-motion";
 import avatar from "@/app/assets/avatar.png";
+import Link from "next/link";
 const testimonials = [
   {
+    id: "1",
     name: "John Doe",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget sapien. Sed ut purus eget sapien.",
     title: "CEO",
     image: avatar,
   },
   {
+    id: "2",
     name: "Anna Svensson",
     text: "Fantastisk service och produkt! Jag kan verkligen rekommendera detta företag till alla som söker kvalitet och pålitlighet.",
     title: "Marknadschef",
     image: avatar,
   },
   {
+    id: "3",
     name: "Erik Lindberg",
     text: "Som utvecklare uppskattar jag verkligen de innovativa lösningarna som erbjuds. Det har revolutionerat vårt arbetssätt.",
     title: "Senior Utvecklare",
     image: avatar,
   },
   {
+    id: "4",
     name: "Maria Öberg",
     text: "Kundtjänsten är enastående. De går alltid den extra milen för att säkerställa kundnöjdhet. Mycket imponerande!",
     title: "Kundrelationschef",
-   image: avatar,
+    image: avatar,
   },
 ];
 
@@ -54,7 +59,7 @@ export default function Testimonials() {
     startAnimation();
     return () => stopAnimation();
   }, [startAnimation, stopAnimation]);
-    return (
+  return (
     <section className="py-20 md:py-24">
       <div className="container">
         <h2 className="text-3xl md:text-6xl text-center tracking-tighter font-medium ">
@@ -74,9 +79,10 @@ export default function Testimonials() {
             className="flex gap-5 flex-none pr-5"
           >
             {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <div
+              <Link
                 key={index}
-                className="border md:p-10 border-white/15 p-6 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)] max-w-sm  md:max-w-md flex-none"
+                href={`/uppdrag/${testimonial.id}`}
+                className="cursor-pointer border md:p-10 border-white/15 p-6 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)] max-w-sm  md:max-w-md flex-none"
               >
                 <div className="text-lg tracking-tight md:text-1xl">
                   {testimonial.text}
@@ -98,7 +104,7 @@ export default function Testimonials() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </motion.div>
         </div>

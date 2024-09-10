@@ -8,8 +8,9 @@ export default function Home() {
     <>
       <Hero />
       <Testimonials />
-      <Accordion />
       <CallToAction />
+      <Accordion />
+    
     </>
   );
 }
