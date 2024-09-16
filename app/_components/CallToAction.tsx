@@ -3,10 +3,11 @@ import React, { useRef } from "react";
 import gridLines from "@/app/assets/grid-lines.png";
 import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/utils";
+import { Button } from "./Button";
 export default function CallToAction() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.4,
+    threshold: 0.7,
   });
   console.log(inView);
   return (
@@ -35,12 +36,12 @@ export default function CallToAction() {
               till nya möjligheter.
             </p>
             <div className="flex justify-center mt-8">
-              <a
+              <Button
                 href="#"
-                className="bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200 transition duration-300"
+                className=" px-6 py-3 rounded-full font-bold transition duration-300"
               >
                 Bli Medlem
-              </a>
+              </Button>
             </div>
           </div>
         </div>
