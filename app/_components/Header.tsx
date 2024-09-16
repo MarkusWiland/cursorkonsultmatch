@@ -65,22 +65,22 @@ export default function Header() {
           </div>
           <div className="flex gap-4 text-sm">
             {true ? (
-              <DropdownMenu >
+              <DropdownMenu>
                 <DropdownMenuTrigger className="focus:none focus:ring-0 focus:border-none">
                   <AvatarHeader />
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="z-[120]">
+                <DropdownMenuContent className="z-[120] text-white border border-[rgb(72,32,138)]/60 bg-[rgb(72,32,138)]">
                   <DropdownMenuLabel>Mitt Konto</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
+                  <DropdownMenuSeparator className="bg-[rgb(40,20,73)]" />
                   {dropDownMenu.map((item) => (
                     <DropdownMenuItem
                       key={item.label}
-                      className="cursor-pointer hover:bg-black"
+                      className="cursor-pointer hover:bg-[rgb(72,32,138)]/30"
                     >
                       {item.label}
                     </DropdownMenuItem>
                   ))}
-                  <DropdownMenuSeparator />
+                  <DropdownMenuSeparator className="bg-[rgb(40,20,73)]" />
                   <DropdownMenuItem className="cursor-pointer">
                     Logga ut
                   </DropdownMenuItem>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import gridLines from "@/app/assets/grid-lines.png";
 import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/utils";
