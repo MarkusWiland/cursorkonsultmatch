@@ -82,7 +82,7 @@ export default function Testimonials() {
               <Link
                 key={index}
                 href={`/uppdrag/${testimonial.id}`}
-                className="cursor-pointer border md:p-10 border-white/15 p-6 rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)] max-w-sm  md:max-w-md flex-none"
+                className="cursor-pointer border md:p-10 border-white/15 p-6  rounded-xl bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.3),black)] hover:bg-[linear-gradient(to_bottom_left,rgb(140,69,255,.5),black)] max-w-sm  md:max-w-md flex-none"
               >
                 <div className="text-lg tracking-tight md:text-1xl">
                   {testimonial.text}

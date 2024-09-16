@@ -1,10 +1,23 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import gridLines from "@/app/assets/grid-lines.png";
+import { useInView } from "react-intersection-observer";
+import { cn } from "@/lib/utils";
 export default function CallToAction() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.4,
+  });
+  console.log(inView);
   return (
-    <section className="py-20 md:py-24 sm:px-4">
-      <div className="container">
-        <div className="border border-white/15 py-24 rounded-xl overflow-hidden relative">
+    <section className="py-20 md:py-24">
+      <div className="container [perspective:2000px] " ref={ref}>
+        <div
+          className={cn(
+            " border border-white/15 py-24 rounded-xl overflow-hidden relative",
+            inView ? "animate-image-rotate" : "[transform:rotateX(25deg)]"
+          )}
+        >
           <div
             className="absolute inset-0 bg-[rgb(72,32,138)] bg-blend-overlay [mask-image:radial-gradient(50%_50%_at_50%_40%,black,transparent)]"
             style={{ backgroundImage: `url(${gridLines.src})` }}

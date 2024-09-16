@@ -65,10 +65,10 @@ const AccordionItem = ({
 
 export default function FAQs() {
   return (
-    <section className=" py-20 bg-gradient-to-b from-[rgb(140,69,255,.3)_44%] to-black">
+    <section className="py-20 md:py-24 bg-gradient-to-b from-[rgb(140,69,255,.3)_44%] to-black">
       <div className="container">
         <h2 className="text-2xl font-medium text-center tracking-tighter">Frågor och svar</h2>
-        <div className="mt-12 max-w-[290px] md:max-w-[648px] md:mx-auto">
+        <div className="mt-12 max-w-[290px] md:max-w-[648px] mx-auto">
           {FAQData.map((item, index) => (
             <AccordionItem
               key={index}
