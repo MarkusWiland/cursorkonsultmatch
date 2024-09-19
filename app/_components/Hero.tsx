@@ -4,7 +4,7 @@ import { Button } from "./Button";
 import { motion } from "framer-motion";
 export default function Hero() {
   return (
-    <section className="h-[492px] md:h-[800px] flex items-center justify-center  overflow-hidden relative">
+    <section className="h-[492px] md:h-[800px] flex items-center justify-center  overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(75%_67%_at_center_center,rgb(140,69,255,.5)_2%,rgb(14,0,46,.5)_72%,transparent)]" />
       <div className="container flex flex-col items-center justify-center relative mt-16 md:-mt-32">
         <motion.h1

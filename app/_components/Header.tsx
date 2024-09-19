@@ -56,7 +56,7 @@ export default function Header() {
                 Om
               </Link>
               <Link
-                href="/"
+                href="/kontakt"
                 className="text-white/70 hover:text-white transition"
               >
                 Kontakt

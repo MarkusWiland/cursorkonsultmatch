@@ -1,6 +1,48 @@
-import React from 'react'
+"use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
+const formSchema = z.object({
+  email: z.string().min(8, {
+    message: "Du måste skriva mer email",
+  }),
+  name: z.string().min(2, {
+    message: "Du måste skriva mer namn",
+  }),
+  meddelande: z.string().min(2, {
+    message: "Du måste skriva mer namn",
+  }),
+});
 export default function Kontakt() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      name: "",
+      meddelande: "",
+    },
+  });
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values);
+  }
+
   return (
     <>
       <section className="h-[492px] md:h-[800px] flex items-center justify-center  overflow-hidden">
@@ -21,18 +63,61 @@ export default function Kontakt() {
       <section className="py-16">
         <div className="container">
           <h1>Uppdrag</h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h2>Uppdrag 1</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, quos.
-              </p>
-              <button>Boka</button>
-            </div>
-          </div>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="email" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                     Email
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+               <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Namn</FormLabel>
+                    <FormControl>
+                      <Input placeholder="name" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                      Namn
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+               <FormField
+                control={form.control}
+                name="meddelande"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Meddelande</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder="meddelande" {...field} />
+                    </FormControl>
+                    <FormDescription>
+                      Meddelande
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit">Skicka</Button>
+            </form>
+          </Form>
         </div>
       </section>
     </>
-  )
+  );
 }
